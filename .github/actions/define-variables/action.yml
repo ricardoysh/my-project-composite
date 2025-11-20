@@ -24,15 +24,15 @@ runs:
         echo "${{ inputs.ACR_NAME }}"
         echo "Detectado Branch --> ${{ github.ref_name }}"
         if [[ "${{ inputs.ACR_NAME }}" == 'xpto' && ${{ github.ref_name}} == 'main' ]]; then
-          echo "Detectado ACR Cielo."
+          echo "Detectado ACR Corprate."
           echo "Definido ACR de PRD!"
           echo "ACR_NAME=acrproduction" >> $GITHUB_OUTPUT
         elif [[ "${{ inputs.ACR_NAME }}" == 'xpto' && "${{ github.ref_name }}" == 'develop' || "${{ github.ref_name }}" == 'release' ]]; then
-          echo "Detectado ACR Cielo."
+          echo "Detectado ACR Corporate."
           echo "Definido ACR de DEV/HML!"
           echo "ACR_NAME=acrdevhml" >> $GITHUB_OUTPUT
         else
-          echo "Detectado ACR Braspag."
+          echo "Detectado ACR Other Corp."
           echo "${{ inputs.ACR_NAME }}"
           echo "ACR_NAME=braspagxpto" >> $GITHUB_OUTPUT
         fi
