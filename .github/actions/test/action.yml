@@ -14,5 +14,5 @@ runs:
       id: test
       shell: bash
       run: |
-        echo "----- TEST ------"
-        echo "NOME=ricardo" >> $GITHUB_OUTPUT
+        echo "Setting actor ..."
+        echo "AUTOR=ricardo" >> $GITHUB_OUTPUT

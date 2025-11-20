@@ -34,5 +34,5 @@ runs:
         else
           echo "Detectado ACR Other Corp."
           echo "${{ inputs.ACR_NAME }}"
-          echo "ACR_NAME=braspagxpto" >> $GITHUB_OUTPUT
+          echo "ACR_NAME=citrus" >> $GITHUB_OUTPUT
         fi
