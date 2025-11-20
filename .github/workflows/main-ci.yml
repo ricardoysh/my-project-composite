@@ -20,9 +20,10 @@ jobs:
         with:
           ACR: ${{ vars.ACR }}
       
-       - name: ACR output
-         run: |
-           echo "ACR_NAME: ${{ steps.define-variables.outputs.ACR_NAME }}"
+      - name: ACR output
+        run: |
+          echo "ACR_NAME: ${{ steps.define-variables.outputs.ACR_NAME }}"
+
   step-2:
     needs: [init]
     runs-on: ubuntu-latest
