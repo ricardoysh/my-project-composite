@@ -22,6 +22,8 @@ jobs:
       - name: Define Variables
         id: define-variables
         uses: ./.github/actions/define-variables
+        with:
+          ACR_NAME: ${{ vars.ACR }}
 
 
       - name: Other test
