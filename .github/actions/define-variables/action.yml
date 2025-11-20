@@ -6,6 +6,10 @@ inputs:
     description: 'Valor do ACR'
     default: 'braspagxpto'
 
+outputs:
+  ACR_NAME:
+    description: 'Valor do ACR definido'
+
 runs:
   using: composite
 
