@@ -1,0 +1,17 @@
+name: CI Pipeline
+
+on: [workflow_dispatch]
+
+
+jobs:
+  init
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Define Variables
+        uses: ./.github/actions/define-variables
+        with:
+          ACR: ${{ vars.ACR }}
