@@ -27,7 +27,6 @@ runs:
           echo "Detectado ACR Cielo."
           echo "Definido ACR de PRD!"
           echo "ACR_NAME=acrproduction" >> $GITHUB_OUTPUT
-          echo "VALOR ------> $ACR_NAME"
         elif [[ "${{ inputs.ACR_NAME }}" == 'xpto' && "${{ github.ref_name }}" == 'develop' || "${{ github.ref_name }}" == 'release' ]]; then
           echo "Detectado ACR Cielo."
           echo "Definido ACR de DEV/HML!"
@@ -35,5 +34,5 @@ runs:
         else
           echo "Detectado ACR Braspag."
           echo "${{ inputs.ACR_NAME }}"
-          echo "ACR_NAME=${{ inputs.ACR_NAME }}" >> $GITHUB_OUTPUT
+          echo "ACR_NAME=braspagxpto" >> $GITHUB_OUTPUT
         fi
