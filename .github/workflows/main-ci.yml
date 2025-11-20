@@ -25,4 +25,4 @@ jobs:
     steps:
       - name: ACR output
         run: |
-          echo "ACR_NAME: ${{ needs.init.outputs.ACR }}"
+          echo "ACR_NAME: ${{ needs.init.outputs.ACR_NAME }}"
