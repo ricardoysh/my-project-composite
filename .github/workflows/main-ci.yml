@@ -13,5 +13,5 @@ jobs:
 
       - name: Define Variables
         uses: ./.github/actions/define-variables
-        with:
-          ACR: ${{ vars.ACR }}
+        # with:
+        #   ACR: ${{ vars.ACR }}
