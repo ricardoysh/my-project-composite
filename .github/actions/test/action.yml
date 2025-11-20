@@ -2,7 +2,8 @@ nome: 'Test'
 description: 'Test'
 
 outputs:
-  NOME: ${{ step.test.outputs.NOME }}
+  NOME:
+    description: "Nome"
 
 runs:
   using: composite
