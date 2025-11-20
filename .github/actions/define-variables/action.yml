@@ -21,19 +21,19 @@ runs:
       shell: bash
       run: |
         echo "----------- Test Define Variables Composite -------------"
-        echo "${{ inputs.ACR }}"
+        echo "${{ inputs.ACR_NAME }}"
         echo "Detectado Branch --> ${{ github.ref_name }}"
-        if [[ "${{ inputs.ACR }}" == 'xpto' && ${{ github.ref_name}} == 'main' ]]; then
+        if [[ "${{ inputs.ACR_NAME }}" == 'xpto' && ${{ github.ref_name}} == 'main' ]]; then
           echo "Detectado ACR Cielo."
           echo "Definido ACR de PRD!"
           echo "ACR_NAME=acrproduction" >> $GITHUB_OUTPUT
           echo "VALOR ------> $ACR_NAME"
-        elif [[ "${{ inputs.ACR }}" == 'xpto' && "${{ github.ref_name }}" == 'develop' || "${{ github.ref_name }}" == 'release' ]]; then
+        elif [[ "${{ inputs.ACR_NAME }}" == 'xpto' && "${{ github.ref_name }}" == 'develop' || "${{ github.ref_name }}" == 'release' ]]; then
           echo "Detectado ACR Cielo."
           echo "Definido ACR de DEV/HML!"
           echo "ACR_NAME=acrdevhml" >> $GITHUB_OUTPUT
         else
           echo "Detectado ACR Braspag."
-          echo "${{ inputs.ACR }}"
-          echo "ACR_NAME=${{ inputs.ACR }}" >> $GITHUB_OUTPUT
+          echo "${{ inputs.ACR_NAME }}"
+          echo "ACR_NAME=${{ inputs.ACR_NAME }}" >> $GITHUB_OUTPUT
         fi
