@@ -7,9 +7,6 @@ jobs:
   init:
     runs-on: ubuntu-latest
 
-    outputs:
-      ACR_NAME:
-
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
