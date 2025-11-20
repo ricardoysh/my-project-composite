@@ -7,8 +7,7 @@ inputs:
     default: 'braspagxpto'
 
 outputs:
-  ACR_NAME:
-    description: 'Valor do ACR definido'
+  ACR_NAME: ${{ steps.define-variables.outputs.ACR_NAME }}
 
 runs:
   using: composite
