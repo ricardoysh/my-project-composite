@@ -23,7 +23,7 @@ runs:
           echo "Definido ACR de PRD!"
           ACR_NAME=acrproduction
           echo "VALOR ------> $ACR_NAME"
-          echo "ACR_NAME=acrproduction" >> $GITHUB_OUTPUT
+          "$ACR_NAME" >> $GITHUB_OUTPUT
         elif [[ "${{ inputs.ACR }}" == 'xpto' && "${{ github.ref_name }}" == 'develop' || "${{ github.ref_name }}" == 'release' ]]; then
           echo "Detectado ACR Cielo."
           echo "Definido ACR de DEV/HML!"
