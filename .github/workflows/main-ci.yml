@@ -7,11 +7,22 @@ jobs:
   init:
     runs-on: ubuntu-latest
 
+    outputs:
+      ACR_NAME: ${{ steps.define-variables.outputs.ACR }}
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
 
       - name: Define Variables
+        id: define-variables
         uses: ./.github/actions/define-variables
-        # with:
-        #   ACR: ${{ vars.ACR }}
+        with:
+          ACR: ${{ vars.ACR }}
+  step-2:
+    needs: [init]
+    runs-on: ubuntu-latest
+    steps:
+      - name: ACR output
+        run: |
+          echo "ACR_NAME: ${{ needs.init.outputs.ACR }}"

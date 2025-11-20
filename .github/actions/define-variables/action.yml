@@ -16,3 +16,16 @@ runs:
       run: |
         echo "----------- Test Define Variables Composite -------------"
         echo "${{ inputs.ACR }}"
+        if [[ "${{ inputs.ACR }}" == 'acr-xpto' && ${{ github.ref_name}} == 'main' ]]; then
+          echo "Detectado ACR Cielo."
+          echo "Definido ACR de PRD!"
+          echo "ACR_NAME=acrproduction" >> $GITHUB_OUTPUT
+        elseif [[ "${{ inputs.ACR }}" == 'acr-xpto' && ${{ github_ref_name}} == 'develop' || ${{ github_ref_name}} == 'release' ]]; then
+          echo "Detectado ACR Cielo."
+          echo "Definido ACR de DEV/HML!"
+          echo "ACR_NAME=acrdevhml" >> $GITHUB_OUTPUT
+        else
+          echo "Detectado ACR Braspag."
+          echo "Definido ACR Braspag."
+          echo "ACR_NAME=${{ inputs.ACR }}" >> $GITHUB_OUTPUT
+        fi
