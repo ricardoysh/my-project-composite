@@ -4,6 +4,7 @@ description: 'Test'
 outputs:
   NOME:
     description: "Nome"
+    value: ${{ steps.test.outputs.NOME }}
 
 runs:
   using: composite
@@ -11,7 +12,7 @@ runs:
   steps:
     - name: test
       id: test
-      shell: sh
+      shell: bash
       run: |
         echo "----- TEST ------"
         echo "NOME=ricardo" >> $GITHUB_OUTPUT

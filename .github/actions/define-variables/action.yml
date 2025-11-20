@@ -4,6 +4,7 @@ description: 'Define as variáveis necessárias para o workflow do projeto.'
 inputs:
   ACR_NAME:
     description: 'Nome do ACR.'
+    value: ${{ stes.define-variables.outputs.ACR_NAME }}
 
 runs:
   using: composite
@@ -11,7 +12,7 @@ runs:
   steps:
     - name: define variables
       id: define-variables
-      shell: sh
+      shell: bash
       run: |
         echo "----------- Test Define Variables Composite -------------"
         echo "${{ inputs.ACR }}"
