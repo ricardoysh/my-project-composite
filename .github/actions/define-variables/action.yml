@@ -4,7 +4,7 @@ description: 'Define as variáveis necessárias para o workflow do projeto.'
 inputs:
   ACR_NAME:
     description: 'Nome do ACR.'
-    value: ${{ stes.define-variables.outputs.ACR_NAME }}
+    value: ${{ steps.define-variables.outputs.ACR_NAME }}
 
 runs:
   using: composite
