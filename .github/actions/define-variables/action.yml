@@ -1,7 +1,7 @@
 nome: 'Define Variables'
 description: 'Define as variáveis necessárias para o workflow do projeto.'
 
-inputs:
+outputs:
   ACR_NAME:
     description: 'Nome do ACR.'
     value: ${{ steps.define-variables.outputs.ACR_NAME }}
