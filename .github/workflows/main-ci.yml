@@ -19,6 +19,10 @@ jobs:
         uses: ./.github/actions/define-variables
         with:
           ACR: ${{ vars.ACR }}
+      
+       - name: ACR output
+         run: |
+           echo "ACR_NAME: ${{ steps.define-variables.outputs.ACR_NAME }}"
   step-2:
     needs: [init]
     runs-on: ubuntu-latest
