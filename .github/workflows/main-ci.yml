@@ -24,9 +24,15 @@ jobs:
         uses: ./.github/actions/define-variables
         with:
           ACR: ${{ vars.ACR }}
+
+      - name: Other test
+        id: export
+        run: |
+          echo "CIDADE=saopaulo" >> $GITHUB_OUTPUT
       
       - name: ACR OUTPUTS
         run: |
+          echo "CIDADE: ${{ steps.export.outputs.CIDADE }}"
           echo "NOME: ${{ steps.test.outputs.NOME }}"
           echo "ACR_NAME: ${{ steps.define-variables.outputs.ACR_NAME }}"
 
