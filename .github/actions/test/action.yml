@@ -2,9 +2,9 @@ nome: 'Test'
 description: 'Test'
 
 outputs:
-  NOME:
-    description: "Nome"
-    value: ${{ steps.test.outputs.NOME }}
+  AUTOR:
+    description: "Autor"
+    value: ${{ steps.test.outputs.AUTOR }}
 
 runs:
   using: composite
