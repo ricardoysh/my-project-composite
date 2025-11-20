@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     outputs:
-      ACR_NAME: ${{ steps.define-variables.outputs.ACR }}
+      ACR_NAME: ${{ steps.define-variables.outputs.ACR_NAME }}
 
     steps:
       - name: Checkout Code
