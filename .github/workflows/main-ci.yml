@@ -45,7 +45,7 @@ jobs:
         run: |
           echo "ACR_NAME: ${{ needs.init.outputs.ACR_NAME }}"
   
-    step-3:
+  step-3:
     needs: [init, step-2]
     runs-on: ubuntu-latest
     steps:
