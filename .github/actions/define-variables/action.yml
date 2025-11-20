@@ -1,6 +1,10 @@
 nome: 'Define Variables'
 description: 'Define as variáveis necessárias para o workflow do projeto.'
 
+inputs:
+  ACR_NAME: 'Nome do ACR de destino.'
+  default: 'braspagxpto'
+
 outputs:
   ACR_NAME:
     description: 'Nome do ACR.'
