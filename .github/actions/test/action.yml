@@ -11,7 +11,7 @@ runs:
   steps:
     - name: test
       id: test
-      shell: bash
+      shell: sh
       run: |
         echo "----- TEST ------"
         echo "NOME=ricardo" >> $GITHUB_OUTPUT

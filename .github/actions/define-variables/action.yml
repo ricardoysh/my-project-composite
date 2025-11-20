@@ -1,13 +1,17 @@
 nome: 'Define Variables'
 description: 'Define as variáveis necessárias para o workflow do projeto.'
 
+inputs:
+  ACR_NAME:
+    description: 'Nome do ACR.'
+
 runs:
   using: composite
 
   steps:
     - name: define variables
       id: define-variables
-      shell: bash
+      shell: sh
       run: |
         echo "----------- Test Define Variables Composite -------------"
         echo "${{ inputs.ACR }}"
