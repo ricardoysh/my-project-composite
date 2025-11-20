@@ -1,0 +1,13 @@
+nome: 'Test'
+description: 'Test'
+
+runs:
+  using: composite
+
+  steps:
+    - name: test
+      id: test
+      shell: bash
+      run: |
+        echo "----- TEST ------"
+        echo "NOME=ricardo" >> $GITHUB_OUTPUT

@@ -1,12 +1,6 @@
 nome: 'Define Variables'
 description: 'Define as variáveis necessárias para o workflow do projeto.'
 
-inputs:
-  ACR:
-    description: 'Valor do ACR'
-    default: 'braspagxpto'
-
-
 runs:
   using: composite
 
@@ -21,7 +15,7 @@ runs:
         if [[ "${{ inputs.ACR }}" == 'xpto' && ${{ github.ref_name}} == 'main' ]]; then
           echo "Detectado ACR Cielo."
           echo "Definido ACR de PRD!"
-          echo ACR_NAME=acrproduction >> $GITHUB_OUTPUT
+          echo "ACR_NAME=acrproduction" >> $GITHUB_OUTPUT
           echo "VALOR ------> $ACR_NAME"
         elif [[ "${{ inputs.ACR }}" == 'xpto' && "${{ github.ref_name }}" == 'develop' || "${{ github.ref_name }}" == 'release' ]]; then
           echo "Detectado ACR Cielo."
